@@ -34,13 +34,7 @@ def user(func):
     def inner(*args, **kwargs):
         # 获取token
         token = request.headers.get('token')
-        if not token:
-            return jsonify({"code": "4103", "message": "缺少参数"})
-
-        data = {"roleId":"","roleName":""}
-        # roleId = data['roleId']
-        roleName = data['roleName']
-        # 判断
+        ... ...
         if roleName == '管理员':
             return func(*args, **kwargs)
         else:
